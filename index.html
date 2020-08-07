@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Electron App</title>
+
+    <link rel="stylesheet" href="css/codeSlate.css">
+    <link rel="stylesheet" href="css/titleBar.css">
+    <link rel="stylesheet" href="css/menubar.css">
+
+    
+
+</head>
+<body>
+    <div class="container">
+        <div class="titleBar titleBarStyle draggable">
+            <div class="windowTitle preventSelect">Codetry</div> 
+
+            <div class="windowControls windowControlStyle preventSelect ">
+                <button id="minimize">-</button>
+                <button id="maximize">[]</button>
+                <button id="close">x</button>
+            </div>
+            <div id="menu-bar">
+                <ul class="main-menu">
+                    <li>
+                        File
+                        <ul>
+                            
+                           <li class="icon save" onclick='createNewFile()'><a href="#">New File<span>Ctrl+N</span></a></li>
+                            <li>New Folder</li>
+                            
+                            <li class="separator"></li>
+                            <li class="icon save" onclick='saveFile()'><a href="javascript:void(0)">Save<span>Ctrl+S</span></a></li>
+                            
+                            <li class="icon save" onclick="showSaveDialogAndSaveFile()"><a href="javascript:void(0)">Save As</a></li>
+                            
+                            <li class="separator"></li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        View
+                        <ul>
+                            <li>Documents
+                                <ul>
+                                    <li>All</li>
+                                    <li class="separator"></li>
+                                    <li>Unfinished</li>
+                                    <li>Closed</li>
+                                </ul>
+                            </li>
+                            <li><a href="/#!/products">Products</a></li>
+                            <li class="separator"></li>
+                            <li>
+                                First level
+                                <ul>
+                                    <li>
+                                        Second level
+                                        <ul>
+                                            <li>
+                                                Third level menu item
+                                            </li>
+                                            <li>
+                                            Third level
+                                            <ul>
+                                                    <li>
+                                                        Forth level menu item 1
+                                                    </li>
+                                                    <li>
+                                                        Forth level menu item 2
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="separator"></li>
+                                            <li>Another third level menu item</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Items will make menus stretch as needed
+                                    </li>
+                                    <li class="separator"></li>
+                                    <li>
+                                         Another menu item
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="separator"></li>
+                            <li>Reports
+                                <ul>
+                                    <li>Sell history</li>
+                                    <li>Clients history</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Window
+                        <ul>
+                            <li class="icon save"><a href="javascript:void(0)">Full Screen<span>F11</span></a></li>
+                           
+                            <li>
+                                <a href="javascript:void(0)" onclick='toggleWidgets()'>Widgets<span><input type='checkbox' id='widgetCheckbox'></span></a>
+                            </li>
+                            <li class="separator"></li>
+                            <li>
+                                Options
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li>
+                        Tools
+                        <ul>
+                            <li>Load Snippets
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                </ul>
+                            </li>
+                            </ul>
+                    </li>
+    
+                    <li>
+                        Settings
+                        <ul>
+                            <li onclick='settings("theme")'>Themes</li>
+                            <li class="separator"></li>
+                            <li>Upgrade account</li>
+                            <li>Registration</li>
+                            <li class="separator"></li>
+                            <li>Contact us</li>
+                        </ul>
+                    </li>
+    
+                    <li>
+                        Help
+                        <ul>
+                            <li onclick='showShortcuts()'>Shortcuts</li>
+                            <li class="separator"></li>
+                            <li>Upgrade account</li>
+                            <li>Registration</li>
+                            <li class="separator"></li>
+                            <li>Contact us</li>
+                        </ul>
+                    </li>
+                </ul>        
+            </div> 
+
+
+        </div>
+
+        <div class="codingScreen">
+
+        </div>
+    </div>
+    
+
+</body>
+<script defer src="js/titleBar.js"></script>
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.menu.js"></script>
+</html>

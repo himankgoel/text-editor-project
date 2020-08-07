@@ -1,0 +1,57 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+body *{
+    box-sizing: border-box;
+}
+.container{
+    height: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.windowTitle{
+    padding: 10px;
+    height: auto;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+}
+.windowControls {
+    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-right : 5px;
+    width: 100px;
+}
+.windowControls button{
+    outline: 0;
+    border:0;
+    padding:5px;
+    background: none;
+}
+.titleBarStyle{
+    background: #202327;
+    color: #FFF;
+    size: 10pt;
+}
+/* .windowControlsStyle{
+
+} */
+.windowControlStyle button{
+    color: #FFF;
+    font-weight:bold;
+    -webkit-app-region: no-drag;
+}
+.windowControlStyle button:hover{
+    background: #48494C;
+}
+.preventSelect{
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+.draggable{
+    -webkit-app-region: drag;
+}
