@@ -3,16 +3,33 @@
 <head>
     <title>Electron App</title>
 
-    <link rel="stylesheet" href="css/codeSlate.css">
     <link rel="stylesheet" href="css/titleBar.css">
     <link rel="stylesheet" href="css/menubar.css">
+    <link rel="stylesheet" href="css/styles.css">
 
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.menu.js"></script>
     
+    <script type="text/javascript" src="js/ace.js"></script>
+    <script type="text/javascript" src="js/mode-javascript.js"></script>
+    <script type="text/javascript" src="js/theme-twilight.js"></script>
+    
+    <style type="text/css" media="screen">
+        #editor { 
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
 
 </head>
 <body>
-    <div class="container">
-        <div class="titleBar titleBarStyle draggable">
+    <!-- whole screen divided into 2 -->
+    <div class="container">  
+        <div class="titleBar titleBarStyle draggable">  
             <div class="windowTitle preventSelect">Codetry</div> 
 
             <div class="windowControls windowControlStyle preventSelect ">
@@ -20,8 +37,9 @@
                 <button id="maximize">[]</button>
                 <button id="close">x</button>
             </div>
-            <div id="menu-bar">
-                <ul class="main-menu preventSelect" style="-webkit-app-region: no-drag;">
+
+            <div id="menu-bar" >
+                <ul class="main-menu preventSelect" style="-webkit-app-region: no-drag">
                     <li>
                         File
                         <ul>
@@ -159,15 +177,72 @@
 
         </div>
 
-        <div class="codingScreen">
 
+        <div class="codingScreen">
+            
+            <div class="explorerContainer explorerContainerStyles">
+
+                <div class="filesContainer">
+
+                </div>
+
+                <div class="folderFiles">
+                    <div class="folderTitle">
+
+                        <div id="folderName">Folder</div>
+                        <button id="syncFiles">Refresh</button>
+                        <button id="changeFolder">Change</button>
+
+                        <div class="exploredFilesContainer">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="editorContainer">
+                
+                
+                <div id="editor">
+                </div>
+
+                <div class="codeStat">
+                    <div class="currentLang">JAVASCRIPT</div>
+                </div>
+
+
+            </div>
+            <div class="widgetsContainer widgetsContainerStyles">
+                <div class="widgetsDrawer">
+                    <div class="widgetsHeader">
+                        <span>x</span>
+                    </div>
+                    <button id="stackOverFlow"></button>
+                    <button id="fontAwesome"></button>
+                    <button id="github"></button>
+                    <button id="cdnjs"></button>
+
+                </div>
+            </div>
         </div>
     </div>
-    
+
+
+
 
 </body>
-<script src="js/titleBar.js"></script>
-<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/jquery.menu.js"></script>
+
+
+
+<script defer src="js/titleBar.js"></script>
+
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/javascript");
+</script>
+
 </html>
